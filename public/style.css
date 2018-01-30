@@ -107,6 +107,10 @@ td {
   margin: 1% 15%;
 }
 
+#single-story #comments {
+  width: 50%;
+}
+
 #single-author {
   align-items: center;
 }
