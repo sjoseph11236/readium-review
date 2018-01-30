@@ -130,6 +130,10 @@ td {
 }
 
 /* classes */
+.active {
+  border-bottom: 1px solid gray;
+}
+
 .author {
   align-items: center;
   padding: 15px;
