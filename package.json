@@ -4,21 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack -w & nodemon --watch server -e js,html server/main.js",
+    "start": "npm run start-server & npm run build-watch",
+    "build-watch": "webpack -w",
+    "start-server": "nodemon --watch server -e js,html server/main.js",
     "seed": "node ./bin/seed"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.17.1",
-    "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "pg": "^7.4.1",
     "pg-hstore": "^2.3.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "sequelize": "^4.31.2",
-    "volleyball": "^1.4.1"
+    "volleyball": "^1.5.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
