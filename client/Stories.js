@@ -9,11 +9,14 @@ export default class Stories extends Component {
     }
   }
 
-  componentDidMount () {
-    axios.get('/api/stories')
-      .then(res => res.data)
-      .then(stories => this.setState({stories}))
-      .catch(console.log.bind(console))
+  async componentDidMount () {
+    try {
+      const storiesResponse = await axios.get('/api/stories')
+      this.setState({ stories: storiesResponse.data })
+    }
+    catch (error) {
+      console.error(error)
+    }
   }
 
   render () {

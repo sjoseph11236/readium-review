@@ -2,43 +2,59 @@ const router = require('express').Router()
 const {Author, Comment, Story} = require('../db')
 
 // GET /api/authors
-router.get('/', (req, res, next) => {
-  Author.findAll({
-    attributes: ['id', 'name', 'imageUrl']
-  })
-    .then(authors => res.json(authors))
-    .catch(next)
+router.get('/', async (req, res, next) => {
+  try {
+    const authors = await Author.findAll({
+      attributes: ['id', 'name', 'imageUrl']
+    })
+    res.json(authors)
+  }
+  catch (error) {
+    next(error)
+  }
 })
 
 // GET /api/authors/:authorId
-router.get('/:authorId', (req, res, next) => {
-  Author.findById(req.params.authorId)
-    .then(story => res.json(story))
-    .catch(next)
+router.get('/:authorId', async (req, res, next) => {
+  try {
+    const author = await Author.findById(req.params.authorId)
+    res.json(author)
+  }
+  catch (error) {
+    next(error)
+  }
 })
 
 // GET /api/authors/:authorId/comments
-router.get('/:authorId/comments', (req, res, next) => {
-  Comment.findAll({
-    where: {
-      authorId: req.params.authorId
-    },
-    include: [Author]
-  })
-    .then(comments => res.json(comments))
-    .catch(next)
+router.get('/:authorId/comments', async (req, res, next) => {
+  try {
+    const comments = await Comment.findAll({
+      where: {
+        authorId: req.params.authorId
+      },
+      include: [Author]
+    })
+    res.json(comments)
+  }
+  catch (error) {
+    next(error)
+  }
 })
 
 // GET /api/authors/:authorId/stories
-router.get('/:authorId/stories', (req, res, next) => {
-  Story.findAll({
-    where: {
-      authorId: req.params.authorId
-    },
-    include: [Author]
-  })
-    .then(stories => res.json(stories))
-    .catch(next)
+router.get('/:authorId/stories', async (req, res, next) => {
+  try {
+    const story = await Story.findAll({
+      where: {
+        authorId: req.params.authorId
+      },
+      include: [Author]
+    })
+    res.json(story)
+  }
+  catch (error) {
+    next(error)
+  }
 })
 
 module.exports = router
