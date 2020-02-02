@@ -3,7 +3,9 @@ const Author = require('./Author')
 const Comment = require('./Comment')
 const Story = require('./Story')
 
+// the foriegn key for target model author is in the Story table source content
 Author.hasMany(Story)
+// 
 Story.belongsTo(Author)
 
 Author.hasMany(Comment)
