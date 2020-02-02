@@ -21,13 +21,14 @@ const fakeStory = {
   ]
 }
 
-class SingleStories extends Component {
+class SingleStory extends Component {
   constructor() {
+    super()
     this.state = { 
       fakeStory: fakeStory
     }
   }
-  
+
   render() { 
     return ( 
       <div id='single-story' className='column'>
@@ -59,4 +60,4 @@ class SingleStories extends Component {
   }
 }
 
-export default SingleStories;
+export default SingleStory;
