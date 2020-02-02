@@ -17,6 +17,6 @@
   - A route is a combination of the URL and the component to be rendered at that URL. 
 
 # The Router: 
-  - For browser based projects the routers to use arr BrowserRuter and HashRouter
-  - `<Browser router> `should be used when you have server that will handle dynamic requests. It knows how to respond to any possible URI. 
+  - For browser based projects the routers to use arr `<BrowserRouter> ` and `<HashRouter>`
+  - `<BrowserRouter> `should be used when you have server that will handle dynamic requests. It knows how to respond to any possible URI. 
   - `<HashRouter>` should be used for a static website.
