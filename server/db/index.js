@@ -3,16 +3,17 @@ const Author = require('./Author')
 const Comment = require('./Comment')
 const Story = require('./Story')
 
-// the foriegn key for target model author is in the Story table source content
-Author.hasMany(Story)
-// 
-Story.belongsTo(Author)
+// the foriegn key for target model Author is in  the source, the Story table.
+Author.hasMany(Story);
+Story.belongsTo(Author);
 
-Author.hasMany(Comment)
-Comment.belongsTo(Author)
+// The foriegn key is in the Comment table
+Author.hasMany(Comment);
+Comment.belongsTo(Author);
 
-Story.hasMany(Comment)
-Comment.belongsTo(Story)
+// The foriegn key is in the Comment table
+Story.hasMany(Comment);
+Comment.belongsTo(Story);
 
 module.exports = {
   db,
