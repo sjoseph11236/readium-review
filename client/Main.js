@@ -14,7 +14,7 @@ export default class Main extends React.Component {
             </div>
             <Navbar />
           </div>
-          <Route path='/stories' component={Stories}/>
+          <Route exact path='/stories' component={Stories}/>
         </div>
       </HashRouter>
     )
